@@ -63,7 +63,8 @@ public class CadeMod {
 
 		@SubscribeEvent
 		public static void onTileEntityRegistry(final RegistryEvent.Register<TileEntityType<?>> event) {
-			event.getRegistry().register(TileEntityType.Builder.create(FirstBlockTile::new, ModBlocks.FIRSTBLOCK)
+//			TileEntityType.Builder.func_223042_a() is obfusticated. It is the same as TileEntityType.Builder.create()
+			event.getRegistry().register(TileEntityType.Builder.func_223042_a(FirstBlockTile::new, ModBlocks.FIRSTBLOCK)
 					.build(null).setRegistryName("firstblock"));
 		}
 	}
