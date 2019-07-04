@@ -4,10 +4,10 @@ import com.cademissner.cademod.CadeMod;
 
 import net.minecraft.item.Item;
 
-public class first_item extends Item {
+public class FirstItem extends Item {
 
-	public first_item() {
+	public FirstItem() {
 		super(new Item.Properties().maxStackSize(1).group(CadeMod.setup.itemGroup));
-		setRegistryName("first_item");
+		setRegistryName("firstitem");
 	}
 }

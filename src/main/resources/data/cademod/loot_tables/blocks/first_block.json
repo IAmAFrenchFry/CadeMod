@@ -7,7 +7,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "cademod:first_block"
+          "name": "cademod:firstblock"
         }
       ],
       "conditions": [

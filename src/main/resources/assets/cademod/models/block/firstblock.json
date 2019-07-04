@@ -1,12 +1,12 @@
 {
   "parent": "block/cube",
   "textures": {
-    "particle": "cademod:block/first_block",
-    "down": "cademod:block/first_block",
-    "up": "cademod:block/first_block",
-    "east": "cademod:block/first_block",
-    "west": "cademod:block/first_block",
-    "north": "cademod:block/first_block_front",
-    "south": "cademod:block/first_block"
+    "particle": "cademod:block/firstblock",
+    "down": "cademod:block/firstblock",
+    "up": "cademod:block/firstblock",
+    "east": "cademod:block/firstblock",
+    "west": "cademod:block/firstblock",
+    "north": "cademod:block/firstblock_front",
+    "south": "cademod:block/firstblock"
   }
 }

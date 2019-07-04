@@ -10,10 +10,10 @@
       "tag": "forge:rods/wooden"
     },
     "X": {
-      "item": "cademod:first_block"
+      "item": "cademod:firstblock"
     }
   },
   "result": {
-    "item": "cademod:first_item"
+    "item": "cademod:firstitem"
   }
 }

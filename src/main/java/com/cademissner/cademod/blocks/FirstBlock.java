@@ -2,7 +2,7 @@ package com.cademissner.cademod.blocks;
 
 import javax.annotation.Nullable;
 
-import com.cademissner.cademod.tileentites.first_blockTile;
+import com.cademissner.cademod.tileentites.FirstBlockTile;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -18,12 +18,12 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 
-public class first_block extends Block {
+public class FirstBlock extends Block {
 
-	public first_block() {
-		super(Properties.create(Material.IRON).sound(SoundType.METAL).hardnessAndResistance(2.0f).lightValue(14));
+	public FirstBlock() {
+		super(Properties.create(Material.ROCK).sound(SoundType.STONE).hardnessAndResistance(2.0f).lightValue(14));
 
-		setRegistryName("first_block");
+		setRegistryName("firstblock");
 	}
 
 	@Override
@@ -34,7 +34,7 @@ public class first_block extends Block {
 	@Nullable
 	@Override
 	public TileEntity createTileEntity(BlockState state, IBlockReader world) {
-		return new first_blockTile();
+		return new FirstBlockTile();
 	}
 
 	@Override

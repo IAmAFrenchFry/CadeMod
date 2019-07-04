@@ -1,10 +1,10 @@
 {
   "variants": {
-    "facing=north": { "model": "cademod:block/first_block"},
-    "facing=south": { "model": "cademod:block/first_block", "y": 180 },
-    "facing=west": { "model": "cademod:block/first_block", "y": 270 },
-    "facing=east": { "model": "cademod:block/first_block", "y": 90 },
-    "facing=up": { "model": "cademod:block/first_block", "x": -90 },
-    "facing=down": { "model": "cademod:block/first_block", "x": 90 }
+    "facing=north": { "model": "cademod:block/firstblock"},
+    "facing=south": { "model": "cademod:block/firstblock", "y": 180 },
+    "facing=west": { "model": "cademod:block/firstblock", "y": 270 },
+    "facing=east": { "model": "cademod:block/firstblock", "y": 90 },
+    "facing=up": { "model": "cademod:block/firstblock", "x": -90 },
+    "facing=down": { "model": "cademod:block/firstblock", "x": 90 },
   }
 }

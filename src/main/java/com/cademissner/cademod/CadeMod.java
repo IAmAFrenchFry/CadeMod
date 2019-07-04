@@ -1,9 +1,20 @@
 package com.cademissner.cademod;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import com.cademissner.cademod.blocks.FirstBlock;
+import com.cademissner.cademod.blocks.ModBlocks;
+import com.cademissner.cademod.items.FirstItem;
+import com.cademissner.cademod.setup.ClientProxy;
+import com.cademissner.cademod.setup.IProxy;
+import com.cademissner.cademod.setup.ModSetup;
+import com.cademissner.cademod.setup.ServerProxy;
+import com.cademissner.cademod.tileentites.FirstBlockTile;
+
 import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
-import net.minecraft.item.Item.Properties;
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -11,17 +22,6 @@ import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
-import com.cademissner.cademod.blocks.ModBlocks;
-import com.cademissner.cademod.blocks.first_block;
-import com.cademissner.cademod.items.first_item;
-import com.cademissner.cademod.setup.ClientProxy;
-import com.cademissner.cademod.setup.IProxy;
-import com.cademissner.cademod.setup.ModSetup;
-import com.cademissner.cademod.setup.ServerProxy;
-import com.cademissner.cademod.tileentites.first_blockTile;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod("cademod")
@@ -51,21 +51,20 @@ public class CadeMod {
 	public static class RegistryEvents {
 		@SubscribeEvent
 		public static void onBlocksRegistry(final RegistryEvent.Register<Block> event) {
-			event.getRegistry().register(new first_block());
+			event.getRegistry().register(new FirstBlock());
 		}
 
 		@SubscribeEvent
 		public static void onItemsRegistry(final RegistryEvent.Register<Item> event) {
 			Item.Properties properties = new Item.Properties().group(setup.itemGroup);
-			event.getRegistry()
-					.register(new BlockItem(ModBlocks.FIRSTBLOCK, properties).setRegistryName("first_block"));
-			event.getRegistry().register(new first_item());
+			event.getRegistry().register(new BlockItem(ModBlocks.FIRSTBLOCK, properties).setRegistryName("firstblock"));
+			event.getRegistry().register(new FirstItem());
 		}
 
 		@SubscribeEvent
 		public static void onTileEntityRegistry(final RegistryEvent.Register<TileEntityType<?>> event) {
-			event.getRegistry().register(TileEntityType.Builder.create(first_blockTile::new, ModBlocks.FIRSTBLOCK)
-					.build(null).setRegistryName("first_block"));
+			event.getRegistry().register(TileEntityType.Builder.create(FirstBlockTile::new, ModBlocks.FIRSTBLOCK)
+					.build(null).setRegistryName("firstblock"));
 		}
 	}
 }
