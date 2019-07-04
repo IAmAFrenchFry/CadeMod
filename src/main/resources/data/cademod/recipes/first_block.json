@@ -1,0 +1,35 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:cobblestone"
+    },
+    {
+      "tag": "forge:dyes/red"
+    },
+    {
+      "tag": "forge:dyes/orange"
+    },
+    {
+      "tag": "forge:dyes/yellow"
+    },
+    {
+      "tag": "forge:dyes/green"
+    },
+    {
+      "tag": "forge:dyes/blue"
+    },
+    {
+      "tag": "forge:dyes/purple"
+    },
+    {
+      "tag": "forge:dyes/pink"
+    },
+    {
+      "tag": "forge:dyes/black"
+    }  
+  ],
+  "result": {
+    "item": "cademod:first_block"
+  }
+}
