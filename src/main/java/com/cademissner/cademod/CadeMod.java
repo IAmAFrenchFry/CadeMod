@@ -5,6 +5,7 @@ import org.apache.logging.log4j.Logger;
 
 import com.cademissner.cademod.blocks.FirstBlock;
 import com.cademissner.cademod.blocks.ModBlocks;
+import com.cademissner.cademod.containers.FirstBlockContainer;
 import com.cademissner.cademod.items.FirstItem;
 import com.cademissner.cademod.setup.ClientProxy;
 import com.cademissner.cademod.setup.IProxy;
@@ -13,9 +14,12 @@ import com.cademissner.cademod.setup.ServerProxy;
 import com.cademissner.cademod.tileentites.FirstBlockTile;
 
 import net.minecraft.block.Block;
+import net.minecraft.inventory.container.ContainerType;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.tileentity.TileEntityType;
+import net.minecraft.util.math.BlockPos;
+import net.minecraftforge.common.extensions.IForgeContainerType;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.DistExecutor;
@@ -26,6 +30,8 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod("cademod")
 public class CadeMod {
+
+	public static final String MODID = "cademod";
 
 	public static IProxy proxy = DistExecutor.runForDist(() -> () -> new ClientProxy(), () -> () -> new ServerProxy());
 
@@ -66,6 +72,14 @@ public class CadeMod {
 //			TileEntityType.Builder.func_223042_a() is obfusticated. It is the same as TileEntityType.Builder.create()
 			event.getRegistry().register(TileEntityType.Builder.func_223042_a(FirstBlockTile::new, ModBlocks.FIRSTBLOCK)
 					.build(null).setRegistryName("firstblock"));
+		}
+
+		public static void onContainerRegistry(final RegistryEvent.Register<ContainerType<?>> event) {
+			event.getRegistry().register(IForgeContainerType.create((windowId, inv, data) -> {
+				BlockPos pos = data.readBlockPos();
+				return new FirstBlockContainer(windowId, CadeMod.proxy.getClientWorld(), pos, inv,
+						CadeMod.proxy.getClientPlayer());
+			}).setRegistryName("firstblock"));
 		}
 	}
 }
